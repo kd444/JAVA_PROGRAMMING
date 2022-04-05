@@ -3,10 +3,15 @@ public class Project {
     interface Test {
         void nothing();
 
-        void nothing1();
+        // void nothing1();
+        // no errors as default declared
+        default void nothing1() {
+
+        }
     }
 
-    // will get error if void nothing and void
+    // will get error if void nothing and void1 not used in all classes
+    // therefore use defualt method
     class Class1 implements Test {
         public void nothing() {
 
